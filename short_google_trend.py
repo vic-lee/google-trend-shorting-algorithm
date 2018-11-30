@@ -1,9 +1,4 @@
-import numpy as np
-import datetime
-from zipline.api import order, record, symbol
-
-'''
-Algorithm description: 
+'''Algorithm description: 
 
 This algorithm shorts the stock market based on how frequent negative keywords 
 are searched on Google.
@@ -32,9 +27,24 @@ Only use search query data at (t - 1) to avoid look-ahead bias.
 
 '''
 
+import numpy as np
+import datetime
+import matplotlib.pyplot as plt
+from zipline.api import order, record, symbol
+
+
 def initialize(context):
-	context.AAPL = symbol('AAPL')
+	context.AAPL = symbol('SPY')    # S&P 500 substitute
 	pass
 
 def handle_data(context, data):
+	pass
+
+
+def analyze(context=None, results=None):
+	'''
+	Plot portfolio return, weekly search freq., avg search freq.
+	'''
+    import matplotlib.pyplot as plt
+    import logbook
 	pass
